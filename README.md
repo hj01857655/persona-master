@@ -20,8 +20,8 @@ node persona-master/bin/gen.js --check
 |---|---|---|
 | claude | `cd claude-jailbreak && node bin/claude-JAILBREAK.js apply` | `~/.claude/output-styles/quench.md` + settings.outputStyle |
 | codex | `cd codex-jailbreak && node bin/codex-JAILBREAK.js apply` | `~/.codex/quench-instructions.md` + config.toml |
-| grok | `cd grok-jailbreak && node bin/grok-JAILBREAK.js apply` | `~/.grok/rules/quench.md` + 工作区 AGENTS.md 块 |
-| kiro | `cd kiro-jailbreak && node bin/kiro-JAILBREAK.js all apply` | steering / agents/quench.json / 工作区 AGENTS.md 块 / 14 个 crew agent |
+| grok | `cd grok-jailbreak && node bin/grok-JAILBREAK.js apply` | `~/.grok/rules/quench.md`（工作区 AGENTS.md 注入默认关闭，`GROK_AGENTS_BLOCK=1` 显式开启） |
+| kiro | `cd kiro-jailbreak && node bin/kiro-JAILBREAK.js all apply` | steering / agents/quench.json / 14 个 crew agent（工作区 AGENTS.md 注入默认关闭，`KIRO_AGENTS_BLOCK=1` 显式开启） |
 | breezell | `cd breezell-jailbreak && node bin/breezell-jailbreak.js persona-apply --persona-file persona/persona.md && node bin/breezell-jailbreak.js user-apply --rules-file persona/rules.md` | `~/.breezell` persona + rules/skills |
 | atomcode | `cd atomcode-jailbreak && node bin/jailbreak-persona.js install --src persona/working-persona.md` | `~/.atomcode/persona/working-persona.md` |
 | zcode | `cd zcode-jailbreak && node bin/zcode-bundle-patch.js apply --file persona/working-persona.md`，再 `cp persona/working-persona.md ~/.zcode-jailbreak/system-role.md` 与 `~/.zcode/AGENTS.md` | bundle 补丁读托管文件 → `customSystemPrompt` |
@@ -51,7 +51,6 @@ grok 与 kiro 共写同一个工作区 `AGENTS.md` 的 QUENCH 块，块内容统
 quench-master.md   唯一手改源
 hosts.json         宿主清单与占位符取值
 bin/gen.js         渲染器（--check 只校验）
-out/agents-block.md  工作区 AGENTS.md 块内容（生成产物）
 .bak/              上一版产物备份（gen 覆盖时刷新）
 ```
 

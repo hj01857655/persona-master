@@ -78,17 +78,6 @@
       "tools": "ZCode 的 tasks、skills、hooks 与 MCP",
       "frontmatter": "",
       "target": "../zcode-jailbreak/persona/working-persona.md"
-    },
-    {
-      "id": "workspace",
-      "title": "工作区破甲态",
-      "platform": "本机工程工作区",
-      "name": "工具宿主",
-      "note": "",
-      "projectScope": "工作区 AGENTS.md 与各端身份文件",
-      "tools": "宿主提供的工具链",
-      "frontmatter": "",
-      "target": "out/agents-block.md"
     }
   ]
 }
